@@ -60,7 +60,7 @@ def api_all():
 
 @app.route('/cart_items', methods=['GET'])
 def api_search():
-	"""Search for products on the basis of 'id' or 'title' values.Eg: Use /v1/items?id=3 to search for the product whose id equals to 3."""
+	"""Search for products on the basis of 'id' or 'title' values.Eg: Use /cart_items?id=3 to search for the product whose id equals to 3."""
 	if 'id' in request.args:
 		id = int(request.args['id'])
 		flag_id=1
@@ -196,7 +196,7 @@ def page_not_found(e):
 '''
 @app.route('/cart_items/add',methods=['GET'])
 def api_add_cart():
-	"""Add products to the cart based on the id provided. Eg: Use /v1/cart/add?id=2 to add product whose id equals 2."""
+	"""Add products to the cart based on the id provided. Eg: Use /cart_items/add?id=2 to add product whose id equals 2."""
 	if 'id' in request.args:
 		id = int(request.args['id'])
 	else:
